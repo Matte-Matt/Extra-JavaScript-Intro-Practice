@@ -637,28 +637,80 @@ function euroTripMoney(dollar, country) {
   }
 }
 euroTripMoney(20, "Great Britain");
+// euroTripMoney(20, "Turkey");
+// euroTripMoney(20, "Bulgaria");
+// euroTripMoney(20, "Ukraine");
+// euroTripMoney(20, "Germany");
 euroTripMoney(20, "Spain");
-// euroTripMoney(3.5, "Turkey");
-// euroTripMoney(3.5, "Bulgaria");
-// euroTripMoney(3.5, "Ukraine");
-// euroTripMoney(3.5, "Germany");
 
 /*TASK 3 🚀
 /// Write a function that takes an airport code and returns the city, country of that airport 
 // find the following codes AAA, ABZ, ABX, ABT, ACA */
 
+function codeFinder(array, code) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].code === code) {
+      return `The airport code ${array[i].code} is located in ${array[i].city}, ${array[i].country}`;
+    }
+  }
+}
+console.log(codeFinder(airports, "AAA"));
+console.log(codeFinder(airports, "ABZ"));
+console.log(codeFinder(airports, "ABX"));
+console.log(codeFinder(airports, "ABT"));
+console.log(codeFinder(airports, "ACA"));
+
 /*TASK 4 🚀 
 // Write a function to that will find the phone number for an airport in a given city  */
 
+function portNumber(array, city) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].city === city) {
+      return `The phone number for the ${array[i].city} airport is ${array[i].phone}`;
+    }
+  }
+}
+console.log(portNumber(airports, "Allentown"));
+
 /*TASK 5 🚀 
 // Write a function that will return all the airports in a given country  */
+
+function countryLookUp(array, country) {
+  const airports2 = Array.from(airports);
+  for (let i = 0; i < array.length; i++) {
+    const airports2 = array[i];
+    if (array[i].country === country && array.includes(`${country}`)) {
+    }
+  }
+}
+console.log(countryLookUp(airports, "United States"));
 
 /*TASK 6 🚀 
 // Write a function that takes and airport name and returns the airport code
 // find the code for the following airports: Al Baha Airport, Ambler Airport, Abuja International Airport*/
 
+function nameFinder(array, name) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].name === name) {
+      return `Your airport code ${array[i].code} is short for The ${array[i].name}.`;
+    }
+  }
+}
+console.log(nameFinder(airports, "Al Baha Airport"));
+console.log(nameFinder(airports, "Ambler Airport"));
+console.log(nameFinder(airports, "Abuja International Airport"));
+
 /*TASK 7 🚀
 // Write a function that takes an airport code and returns the number of direct flights available */
+
+function flightDir(array, code) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].code === code) {
+      return `The number of direct flights for ${array[i].code} is currently ${array[i].direct_flights}.`;
+    }
+  }
+}
+console.log(flightDir(airports, "AAA"));
 
 // /*TASK 8 🚀
 // // Find out what your flight options are - write a function that returns a new array of all the country names in a set of data
